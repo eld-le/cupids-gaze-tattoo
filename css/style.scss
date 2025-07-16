@@ -1,0 +1,1240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+// font-family: 'Dancing Script', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+// font-family: 'Sacramento', cursive;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2 linear;
+}
+
+$main-color: #cba328;
+$ivory: #FFFFF0;
+$darker-ivory: #ffffe6;
+$darkish: #5C5346;
+$black: #000000;
+$white: #fff;
+$gradient-tb: linear-gradient(to bottom, #fffff0 0%, #cba328 100%);
+$gradient-bt: linear-gradient(to bottom, #cba328 0%, #fffff0 100%);
+$light-color: #aaa;
+$border: .1rem solid rgba(0,0,0,.1);
+$box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+    }
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $darker-ivory;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $main-color;
+        border-radius: 5rem;
+    }
+}
+
+body {
+    min-height: 100vh;
+    background: $darkish;
+ }
+
+ section {
+    padding: 5rem 10%;
+  }
+ 
+ .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background: $darker-ivory;
+    color: $main-color;
+    font-size: 1.7rem;
+    cursor: pointer;
+    border: $darkish solid;
+
+    &:hover {
+        background: $main-color;
+        color: $darker-ivory;
+    }
+ }
+
+// Header Starts
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 9%;
+    z-index: 10000;
+    background: $gradient-tb;
+    /* position: fixed;
+    width: 100%;
+    min-height: 66px;
+    background: $gradient-tb;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; */
+
+    .logo {
+        font-size: 3em;
+        font-weight: 600;
+        text-decoration: none;
+        color: $darkish;
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 6rem;
+        }
+    }
+
+    ul {
+        position: relative;
+
+        li {
+            position: relative;
+            list-style: none;
+            float: left;
+
+            a {
+                color: $darkish;
+                font-size: 1.75rem;
+                padding: 20px 25px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-between;
+
+                &:hover {
+                    color: $main-color;
+                    text-decoration: underline;
+                }
+            }
+
+            ul {
+                position: absolute;
+                left: 0;
+                width: 200px;
+                background: $darker-ivory;
+                border: $border;
+                display: none;
+
+                li {
+                    position: relative;
+                    width: 100%;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            &:hover ul {
+                display: block;
+            }
+        }
+    }
+}
+// Header Ends
+
+// Heading Starts
+.heading {
+    background: url(../imgs/heading-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $darker-ivory;
+    text-align: center;
+    padding-top: 12rem; 
+    padding-bottom: 8rem;
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 4.4rem;
+    }
+    
+    p {
+        padding: 1rem;
+        font-size: 2rem;
+        color: $ivory;
+
+        a {
+            color: $ivory;
+            padding-right: .5rem;
+
+            &:hover {
+                color: $darkish;
+                
+            }
+        }
+    }
+  }
+// Heading Ends
+
+// Title Section Starts
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.2rem 0;
+    border-bottom: 0.5rem solid rgba(0, 0, 0, 0.1);
+    color: $ivory;
+
+    span {
+        color: $main-color;
+        padding-left: 0.7rem;
+        font-size: 3rem;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    a {
+        margin-left: auto;
+        color: $darker-ivory;
+        font-size: 1.5rem;
+    }
+}
+
+.title__2 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: $ivory;
+    text-transform: uppercase;
+    font-size: 4rem;
+
+    span {
+        color: $main-color;
+        text-transform: uppercase;
+        font-family: 'Dancing Script', cursive;
+    }
+}
+// Title Section Ends
+
+// Home Page Starts
+.home {
+    padding: 0;
+    margin-top: 6.5rem;
+    /* padding: 5rem;
+    padding-left: 6rem;
+    padding-right: 6rem; */
+
+    .slide {
+        min-height: 70vh;
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 2rem 9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       /*  min-height: 100vh;
+        background-size: cover !important;
+        background-position: center !important;
+        position: relative;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+
+        .content {
+            text-align: center;
+            width: 70rem;
+
+            span {
+                font-size: 4rem;
+                display: block;
+                padding-bottom: .5rem;
+                color: $ivory;
+                font-family: 'Dancing Script', cursive;
+            }
+
+            h3 {
+                font-size: 8vw;
+                text-transform: uppercase;
+                color: $main-color;
+                text-shadow: 0.5rem 1rem rgba(0, 0, 0, .7);
+                line-height: 1;
+                padding: 2rem 0;
+                font-family: 'Dancing Script', cursive;
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        color: $darker-ivory
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $darker-ivory;
+    }
+}
+
+// Mini Artists Section Starts
+.miniart__intro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .miniart__img {
+        flex: 1 1 41rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .miniart__content {
+        flex: 1 1 41rem;
+
+        h3 {
+            font-size: 4rem;
+            color: $main-color;
+        }
+
+        p {
+            font-size: 1.7rem;
+            color: $darker-ivory;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .break {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+// Mini Artist Section Ends
+
+// Mini Shop Section Starts
+.mini__store {
+
+    p {
+        color: $ivory;
+        font-size: 1.7rem;
+        line-height: 2;
+        padding: 1rem 0;
+    }
+
+    .mini__store-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+
+        .mini__store-box {
+            height: 25rem;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
+}
+// Mini Shop Section Ends
+
+// Home Page Ends
+
+// Artists Page Starts
+.art__intro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .art__img {
+        flex: 1 1 41rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .art__content {
+        flex: 1 1 41rem;
+
+        h3 {
+            font-size: 4rem;
+            color: $main-color;
+        }
+
+        p {
+            font-size: 1.7rem;
+            color: $darker-ivory;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .checkout {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+            font-size: 3rem;
+            color: $main-color;
+            padding: 1rem 0;
+            line-height: 2;
+            font-family: 'Dancing Script', cursive;
+            }
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                margin: 0 1rem;
+                margin-top: 2rem;
+                margin-bottom: 5rem;
+                height: 4.5rem;
+                width: 4.5rem;
+                line-height: 4.5rem;
+                border-radius: 15px;
+                font-size: 2rem;
+                color: $ivory;
+                background-color: $main-color;
+                transition: all linear 0.5s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    transform: translate(0px, -3px);
+                    box-shadow: 0px 0px 5px 0px $darker-ivory;
+                    color: $main-color;
+                    background-color: $ivory;
+                }
+            }
+        }
+
+        .art-slider {
+            overflow: hidden;
+            border-radius: .5rem;
+            height: 60rem;
+            width: 45rem;
+    
+            .swiper-slide {
+    
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+// Artists Page Ends
+
+// About Us Page Starts
+
+.about__us {
+            // About Us Intro Starts
+    .about__row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .about__img {
+            flex: 1 1 40rem;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .about__content {
+        flex: 1 1 40rem;
+
+        p {
+            font-size: 1.7rem;
+            color: $darker-ivory;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+    }
+            // About Us Intro Ends
+
+            // Store Section Starts
+    .shop__box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+
+        .shop__box {
+            height: 25rem;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: grayscale(1);
+                }
+            }
+        }
+    } 
+          // Store Section Ends 
+            
+          // Owner Section Starts
+    .owner {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .owner__img {
+            flex: 1 1 41rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .owner__content {
+        flex: 1 1 41rem;
+
+        h3 {
+            font-size: 4rem;
+            color: $main-color;
+        }
+
+        p {
+            font-size: 1.7rem;
+            color: $darker-ivory;
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .break {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    // Owner Section Ends
+
+    // Tattoo Artists Section Starts
+    .artists_box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+
+        .artists_box {
+            height: 40rem;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.1);
+                    filter: grayscale(1);
+                }
+            }
+        }
+    }
+    // Tattoo Artists Section Ends
+
+    // Reviews Section Starts 
+    .reviews-slider {
+
+        .slide {
+            border-radius: .5rem;
+            background-color: $ivory;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            user-select: none;
+
+            p {
+                line-height: 2;
+                font-size: 1.6rem;
+                color: var($darkish);
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+
+                img {
+                    height: 7rem;
+                    width: 7rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    color: $darkish;
+                    margin-bottom: .7rem;
+                }
+
+                .stars {
+
+                    i {
+                        font-size: 1.5rem;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .reviews_card {
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 2px 2px 12px 2px $main-color;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+       background: $main-color;
+    }
+}
+// About Us Page Ends
+
+// FAQs Page Starts
+.extra {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 20px;
+        color: $darker-ivory;
+    }
+}
+
+.faqs {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .faq {
+        max-width: 700px;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $main-color;
+        cursor: pointer;
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                font-size: 1.8rem;
+                color: $darker-ivory;
+            }
+
+            svg {
+                transition: transform 0.5s ease-in;
+            }
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1.4s ease;
+        }
+
+        .answer p {
+            padding-top: 1rem;
+            line-height: 1.6;
+            font-size: 1.4rem;
+            color: $ivory;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: $main-color;
+        }
+    }
+}
+
+.faq.active .answer {
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+  }
+
+.faq.active svg {
+    transform: rotate(180deg);
+  }
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+// FAQs Page Ends
+
+// Blog Page Section Starts
+.blogs {
+
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+
+        .box {
+            border: 0.1rem solid rgba(0, 0, 0, 0.1);
+            background: $ivory;
+
+            &:hover {
+                box-shadow: 2px 2px 12px 2px $main-color;
+            }
+
+            .image {
+                height: 25rem;
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+
+                .icons {
+                    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+                    padding-bottom: 1.7rem;
+                    margin-bottom: 1.7rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    a {
+                        font-size: 1.4rem;
+                        color: $darkish;
+
+                        i {
+                            color: $main-color;
+                            padding-right: 0.5rem;
+                        }
+                    }
+                }
+
+                h3 {
+                    font-size: 2.2rem;
+                    color: $darkish;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    color: $darkish;
+                    line-height: 2;
+                    padding: 1rem 0;
+                }
+
+                .btn {
+                    margin-top: 1rem;
+                    display: inline-block;
+                    padding: .8rem 3rem;
+                    background: $main-color;
+                    color: $darker-ivory;
+                    font-size: 1.7rem;
+                    cursor: pointer;
+                    border: $darkish solid;
+                    border-radius: 15px;
+
+                    &:hover {
+                        background: $darkish;
+                        color: $darker-ivory;
+                    }
+                }
+            }
+        }
+    }
+}
+// Blog Page Section Ends
+
+// Contact Page Starts
+.contact {
+
+    .icons-container {
+        @include grid(29rem);
+    }
+
+    .icons {
+        text-align: center;
+        border: .1rem solid rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        background: $darker-ivory;
+
+        i {
+            height: 6rem;
+            width: 6rem;
+            line-height: 6rem;
+            font-size: 2.5rem;
+            background: $main-color;
+            color: $ivory;
+            border-radius: 50%;
+        }
+
+        h3 {
+            color: $darkish;
+            font-size: 2rem;
+            padding: 1rem 0;
+        }
+
+        p {
+            color: $darkish;
+            font-size: 1.4rem;
+            line-height: 2;
+            text-transform: none;
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+
+        form {
+            padding: 2rem;
+            border: .1rem solid rgba(0, 0, 0, 0.1);
+            flex: 1 1 40rem;
+            background: $ivory;
+
+            h3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+                padding-bottom: 1rem;
+                color: $darkish;
+            }
+
+            .inputbox {
+                display: flex;
+                justify-content: space-between;
+                flex: 1 1 40rem;
+
+                input {
+                    width: 49%;
+                }
+            }
+
+            .inputbox, .box,
+            textarea {
+                padding: 1rem 1.2rem;
+                font-size: 1.6rem;
+                border: .3rem solid hsla(45, 67%, 48%, 0.5);
+                border-radius: 15px;
+                color: $darkish;
+                text-transform: none;
+                margin: .7rem 0;
+            }
+
+            textarea {
+                width: 100%;
+                height: 15rem;
+                resize: none;
+            }
+
+            .contact__button {
+                padding: 1em;
+                border: $main-color solid;
+                border-radius: 15px;
+                background-color: $main-color;
+                color: $ivory;
+    
+                &:hover {
+                    background-color: $darkish;
+                    color: $ivory;
+                    border: $darkish solid;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .map {
+            flex: 1 1 40rem;
+            width: 100%;
+        }
+    }
+
+    a {
+        font-size: 4rem;
+        color: $darkish;
+        font-family: 'Dancing Script', cursive;
+
+        &:hover {
+            color: $ivory;
+            text-decoration: underline solid $main-color;
+        }
+    }
+}
+// Contact Page Ends
+
+// Appointment Starts
+article {
+    display: block;
+    background: $ivory;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+
+    .appointment__h2 {
+        margin: 0;
+        color: $darkish;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Dancing Script', cursive;font-size: 4rem;
+        text-decoration-line: underline;
+    }
+
+    form {
+        display: block;
+
+        .appointment__fieldset {
+            border: none;
+        }
+
+        .offscreen {
+            position: absolute;
+            left: -10000px;
+        }
+
+        p {
+            line-height: 1.5;
+            color: $darkish;
+
+            .appointment__p {
+                margin: 1em 0;
+            }
+
+            .appointment__label {
+                display: block;
+                font-weight: bold;
+                font-size: 2rem;
+
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .appointment__input,
+            .appointment__textarea {
+                padding: 0.5em;
+                border: $darkish solid;
+                border-radius: 15px;
+                border-width: 2px;
+                width: 100%;
+            }
+        }
+
+        .appointment__button {
+            padding: 1em;
+            border: $main-color solid;
+            border-radius: 15px;
+            background-color: $darkish;
+            color: $ivory;
+
+            &:hover {
+                background-color: $main-color;
+                border: $darkish solid;
+            }
+        }
+    }
+}
+
+// Footer Starts
+.footer {
+    background: $gradient-bt;
+    border-top: $main-color solid;
+
+    .box-container {
+        @include grid(25rem);
+
+        .box {
+
+            h3 {
+                font-size: 2.2rem;
+                color: $darkish;
+                padding: 1rem 0;
+                font-family: 'Dancing Script', cursive;
+            }
+
+            p {
+                font-size: 1.4rem;
+                color: $darkish;
+                padding-bottom: .5rem;
+            }
+
+            a {
+                font-size: 1.4rem;
+                color: $darkish;
+                padding: 1rem 0;
+                display: block;
+
+                &:hover {
+                    color: $main-color;
+
+                    i {
+                        padding-right: 2rem;
+                    }
+                }
+
+                i {
+                    padding-right: .5rem;
+                    color: $main-color;
+                }
+            }
+
+            form input[type="email"] {
+                width: 100%;
+                padding: 1rem 1.2rem;
+                font-size: 1.6rem;
+                background: $ivory;
+                color: $darkish;
+                margin: 1rem 0;
+                text-transform: none;
+            }                
+        }
+    }
+}
+
+.credit {
+    text-align: center;
+    background: $ivory;
+    color: $main-color;
+    font-size: 2rem;
+}
+// Footer Ends
+
+// Back To Top Starts
+/* .to-top {
+    background: $main-color;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: $ivory;
+    text-decoration: none;
+    opacity: 1;
+    pointer-events: none;
+    transition: all .4s;
+
+    .active {
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+} */
+// Back To Top Ends
+
+
+
+
+
+
+// Media Queries
+@media (max-width:1200px) {
+    section {
+        padding: 3rem 5%;
+    }
+}
+ 
+ 
+ @media (max-width:991px) {
+    section {
+        padding: 3rem 2rem;
+    }
+ 
+    html {
+        font-size: 55%;
+    }
+
+    .home {
+
+        .slide {
+
+            .content {
+
+                h3 {
+                    font-size: 15vw;
+                }
+            }
+        }
+    }
+ }
+ 
+ 
+ @media (max-width:768px) {
+    section {
+        padding: 3rem 2rem;
+    }
+    .header {
+        padding: 10px 20px;
+
+        &.active nav {
+            display: initial;
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            top: 90px;
+            left: 0;
+            background: $main-color;
+            display: none;
+
+            ul {
+
+                li {
+                    width: 100%;
+                    
+                    a {
+                        margin: 1.5rem;
+                        padding: 1.5rem;
+                        background: $darker-ivory;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $darkish;
+                        border-radius: 0.5rem;
+                    }
+
+                    ul {
+                        position: relative;
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .menuToggle {
+            position: relative;
+            width: 40px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: $darkish;
+                transform: translateY(-12px);
+                box-shadow: 0 12px $darkish;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: $darkish;
+                transform: translateY(12px);
+            }
+        }
+
+        &.active .menuToggle::before {
+            transform: rotate(45deg);
+            box-shadow: 0 0 $main-color;
+        }
+
+        &.active .menuToggle::after {
+            transform: rotate(315deg);
+        }
+    }
+ }
+ 
+ 
+ @media (max-width:450px) {
+ 
+    html {
+        font-size: 50%;
+    }
+ }

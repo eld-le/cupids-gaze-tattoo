@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+
+    <link rel="icon" href="imgs/icon.png" type="image/x-icon">
+
+    <!-- Font Awesome Cdn Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Box Icon Cdn Link  -->
+    <link rel="stylesheet" href="">  
+
+    <!-- Swiper Cdn Link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    <body>
+        
+        <!-- Header Section Starts -->
+
+        <header class="heading">
+            <h1>book an appointment</h1>
+            <p> <a href="home.html">home >></a> appointment</p>
+        </header>
+
+        <!-- Header Section Ends -->
+
+     <!-- Appointment Form Section Starts -->
+     <section>
+        <article class="main__article appointment">
+            <h2 class="appointment__h2">Appointment Form</h2>
+
+            <form action="https://httpbin.org/get" method="get" class="appointment__form">
+                <fieldset class="appointment__fieldset">
+                    <legend class="offscreen">Book An Appointment</legend>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="name">Full Name: <span>(required)</span></label>
+                        <input class="appointment__input" type="text" name="name" id="name" placeholder="Full Name" required>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="pronouns">Pronouns: <span>(optional)</span></label>
+                        <input class="appointment__input" type="text" name="pronouns" id="pronouns" placeholder="Ex: She/Her, He/Him, They/Them">
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="phone">Phone: <span>(required)</span></label>
+                        <input class="appointment__input" type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="email">Email: <span>(required)</span></label>
+                        <input class="appointment__input" type="email" name="email" id="email" placeholder="Your Email" required>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="tattoo__description">Tattoo Description: <span>(required)</span></label>
+                        <br>
+                        <textarea class="appointment__textarea" name="tattoo__description" id="tattoo__description" cols="30" rows="10" placeholder="Please Include As Much Detail As Possible" required></textarea>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="body__placement">Body Placement: <span>(required)</span></label>
+                        <br>
+                        <textarea class="appointment__textarea" name="body__placement" id="body__placement" cols="30" rows="10" placeholder="Ex: Forearm, Legs, Hand..." required></textarea>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="size">Approximate Size (cm/inches): <span>(required)</span></label>
+                        <br>
+                        <textarea class="appointment__textarea" name="size" id="size" cols="30" rows="10" placeholder="Ex: 2.54cm x 2.54cm / 1 in x 1 in" required></textarea>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="photo"> Reference Photo: <span>(required)</span></label>
+                        <input class="appointment__input" type="photo" name="photo" id="photo" placeholder="https://" required>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="availability">General Availability: <span>(required)</span></label>
+                        <br>
+                        <textarea class="appointment__textarea" name="availability" id="availability" cols="30" rows="10" placeholder="Whenever Your Available" required></textarea>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="artists">Prefered Artist: <span>(required)</span></label>
+                        <select name="artists" id="artists" class="artists">
+                            <option value="other">Any Available Artist</option>
+                            <option value="angel">Angel</option>
+                            <option value="kristen">Kristen</option>
+                            <option value="tyler">Tyler</option>
+                            <option value="sandra">Sandra</option>
+                        </select>
+                    </p>
+
+                    <p class="appointment__p">
+                        <label class="appointment__label" for="additional__info">Additional Information: <span>(optional)</span></label>
+                        <br>
+                        <textarea class="appointment__textarea" name="additional__info" id="additional__info" cols="30" rows="10" placeholder="Anything Else You Would Like To Share Us?"></textarea>
+                    </p>
+
+                    <button class="appointment__button" type="submit">Send</button>
+                    <button class="appointment__button" type="reset">Reset</button>
+                    
+                </fieldset>
+            </form>
+
+        </article>
+     </section>
+     <!-- Appointment Form Section Ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer Section Starts -->
+
+        <section class="footer">
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>address</h3>
+                    <p>20 W 34th St., New York, NY 10001</p>
+                    <h3>email</h3>
+                    <p>CupidsGazeTattoos@gmail.com</p>
+                    <h3>phone</h3>
+                    <p>123-456-7890</p>
+                </div>
+
+                <div class="box">
+                    <h3>shop hours</h3>
+                    <p>monday-saturday</p>
+                    <p>12pm-10pm</p>
+                    <br>
+                    <p>sunday</p>
+                    <p>closed</p>
+                </div>
+
+                <div class="box">
+                    <h3>follow us</h3>
+                    <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                    <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                    <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                    <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+                    <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+                </div>
+
+                <div class="box">
+                    <h3>newsletter</h3>
+                    <p>subscribe for the latest updates</p>
+                    <form action="">
+                        <input type="email" placeholder="enter your email">
+                        <input type="submit" value="subscribe" class="btn">
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="credit">created by Elise D. | all rights reserved!</section>
+
+        <!-- Footer Section Ends -->
+
+
+        <!-- Swiper Js Link  -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+        <!-- Custom JS File Link  -->
+        <script src="js/main.js" defer></script>
+    </body>
+
+</html>
